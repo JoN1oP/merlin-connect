@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merlin Connect</title>
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body data-state="offline">
+  <header class="sky">
+    <div class="wrap sky-row">
+      <h1 class="brand">Merlin Connect</h1>
+      <div class="link" aria-live="polite">
+        <span class="lamp" aria-hidden="true"></span>
+        <div class="link-text">
+          <strong id="link-title">Non connecté</strong>
+          <span id="link-detail" class="link-detail"></span>
+        </div>
+        <button id="link-action" class="on-sky">Connecter</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="bar" aria-label="Dossiers">
+      <ol id="crumbs" class="crumbs"></ol>
+      <div id="tools" class="tools">
+        <button id="new-folder">Nouveau dossier</button>
+        <button id="add-files">Ajouter des fichiers</button>
+        <button id="add-folder">Importer un dossier</button>
+      </div>
+    </nav>
+    <p id="empty" class="empty" hidden></p>
+    <ul id="grid" class="grid"></ul>
+  </main>
+
+  <footer class="dock">
+    <div class="wrap dock-row">
+      <div class="dock-text">
+        <span id="pending"></span>
+        <div id="progress" class="progress-row" hidden>
+          <div class="progress"><div id="progress-fill" class="progress-fill"></div></div>
+          <span id="progress-stats"></span>
+        </div>
+      </div>
+      <button id="sync" class="primary">Synchroniser</button>
+    </div>
+  </footer>
+
+  <input type="file" id="pick-files" multiple accept=".mp3,audio/mpeg,image/*" hidden>
+  <input type="file" id="pick-folder" webkitdirectory hidden>
+  <input type="file" id="pick-cover" accept="image/*" hidden>
+  <dialog id="dialog"></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
